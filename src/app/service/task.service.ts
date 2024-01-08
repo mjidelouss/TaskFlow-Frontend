@@ -9,7 +9,10 @@ import { Task } from '../models/task.model';
 export class TaskService {
   constructor(private store: Store) {}
 
-  // Dispatch actions
+  getTasks() {
+    this.store.dispatch(TaskActions.getTasks());
+  }
+  
   addTask(task: Task) {
     this.store.dispatch(TaskActions.addTask({ task }));
   }

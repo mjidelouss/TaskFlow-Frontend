@@ -1,0 +1,22 @@
+<div class="container mt-4">
+    <h2>Task List</h2>
+  
+    <ul class="list-group">
+      <li *ngFor="let task of tasks" class="list-group-item">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">{{ task.title }}</h5>
+          <small>Deadline: {{ task.deadline }}</small>
+        </div>
+        <p class="mb-1">{{ task.description }}</p>
+        <small class="text-muted">Created by: User ID {{ task.createdBy }}</small>
+        <div>
+          <strong>Tags:</strong>
+          <ul class="list-inline">
+            <li *ngFor="let tag of task.tags" class="list-inline-item badge badge-secondary">{{ tag }}</li>
+          </ul>
+        </div>
+        <small class="text-muted">Creation Date: {{ task.creationDate }}</small>
+      </li>
+    </ul>
+  </div>
+  
